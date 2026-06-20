@@ -8,12 +8,12 @@ let storage;
 if(process.env.NODE_ENV === "production"){
     storage = new CloudinaryStorage({
         cloudinary,
-        params:{
+        params:async(req,file)=>({
             folder:"pdf_folder",
             resource_type:"raw",
             public_id:Date.now() + "-" + file.originalname.replace(".pdf", ""),
             format: "pdf",
-        }
+        })
     })
 }else{
     storage = multer.diskStorage({
