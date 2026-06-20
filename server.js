@@ -12,6 +12,15 @@ app.use(express.json());
 app.use('/uploads',express.static('uploads'));
 app.use('/api/files',filesRoutes);
 
+app.use((err, req, res, next) => {
+    console.error("Global Error:", err);
+    console.error("Message:", err.message);
+
+    res.status(500).json({
+        message: err.message
+    });
+});
+
 const PORT = process.env.PORT || 5001;
 app.listen(PORT,()=>{
     console.log(`Server started running at port ${PORT} ...`)
