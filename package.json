@@ -1,0 +1,21 @@
+{
+  "name": "file_handling_api",
+  "version": "1.0.0",
+  "description": "file handling using multer library",
+  "license": "ISC",
+  "author": "kavya",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cloudinary": "^1.41.3",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.1",
+    "multer": "^2.2.0",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemon": "^3.1.14"
+  }
+}
