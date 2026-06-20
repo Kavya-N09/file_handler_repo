@@ -42,6 +42,7 @@ exports.createFiles = async(req,res)=>{
         })
     }
     catch(err){
+        console.error("Controller Error Trace:", err);
         return res.status(500).json({
             message:err.message
         })
