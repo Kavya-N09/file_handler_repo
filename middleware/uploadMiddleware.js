@@ -6,6 +6,7 @@ const cloudinary = require('../config/cloudinary');
 let storage;
 
 if(process.env.NODE_ENV === "production"){
+    console.log("Initializing Cloudinary Storage with Cloud Name:", process.env.CLOUDINARY_CLOUD_NAME);
     storage = new CloudinaryStorage({
         cloudinary,
         params:{

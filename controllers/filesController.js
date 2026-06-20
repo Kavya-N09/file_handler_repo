@@ -41,10 +41,13 @@ exports.createFiles = async(req,res)=>{
             new_file,
         })
     }
-    catch(err){
-        console.error("Controller Error Trace:", err);
-        return res.status(500).json({
-            message:err.message
-        })
-    }
+    catch (err) {
+    // This forces Node to display the full internal object fields instead of just [object Object]
+    console.error("Controller Error Trace:", JSON.stringify(err, null, 2));
+    console.error("Error Message Text:", err.message);
+    
+    return res.status(500).json({
+        message: err.message || "An unexpected controller error occurred"
+    });
+}
 }
