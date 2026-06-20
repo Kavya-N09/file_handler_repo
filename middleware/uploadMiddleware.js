@@ -11,6 +11,8 @@ if(process.env.NODE_ENV === "production"){
         params:{
             folder:"pdf_folder",
             resource_type:"raw",
+            public_id:Date.now() + "-" + file.originalname.replace(".pdf", ""),
+            format: "pdf",
         }
     })
 }else{
